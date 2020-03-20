@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>My form</title>
+    </head>
+
+    <body>
+        <form action="http://localhost/Exerc%c3%adcio%203%2017-03-20/server.php" method="POST">
+
+            <h1>Exemplo de formulário</h1>
+
+            <h4>Digite seu nome:</h4>
+            <input name="name" type="text" required />
+
+            <h4>Data de nascimento</h4>
+            <input name="date" type="date" /> </br>
+
+            <input type="checkbox" id="check1" name="check1" value="Bike">
+            <label for="vehicle1"> Check box 1</label><br>
+            <input type="checkbox" id="check2" name="check2" value="Car">
+            <label for="vehicle2"> I have a car</label><br>
+            <input type="checkbox" id="check3" name="check3" value="Boat">
+            <label for="vehicle3"> I have a boat</label><br><br>
+
+            <h4>Sexo</h4>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Masculino</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Feminino</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Outro</label>
+
+            <h4>Selecione o curso</h4>
+            <select id="courses">
+                <option value="si">Sistemas de informação</option>
+                <option value="cc">Ciência da Computação</option>
+                <option value="jd">Jogodos digitais</option>
+            </select>
+
+            <h4>Sugestão</h4>
+            <textarea id="textarea" rows="4" cols="50">
+            </textarea><br>
+
+            <button id="btn-submit" type="submit">Submit</button>
+
+        </form>
+    </body>
+
+</html>
