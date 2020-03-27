@@ -1,5 +1,5 @@
 *{
-    max-width: 500px;
+    max-width: 350px;
     margin: 10px auto 0;
     
 }
@@ -10,27 +10,22 @@ form{
     padding: 5px;
 }
 
-h1{
-    width: 70%;
-    margin-left: 20%;
-    margin-right: 25%;
+h2{
+    width: 75%;
+    margin-left: 13%;
 }
 
 h3{
-    width: 40%;
+    width: 80%;
     margin-left: 0%;
     margin-right: 30%;
     
 }
-#input-name{
-    width: 80%;
+
+input{
+    width: 100%;
 }
 
-#input-date{
-    width: 27%;
-    margin-left: 0%;
-    margin-right: 40%;
-}
 
 button#btn-submit{
     background-color:lightgreen;
@@ -39,4 +34,14 @@ button#btn-submit{
     margin-right: 30%;
     font-size: 17;
     font-weight: bold;
+}
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00A0C6;
+    text-decoration: none;
+    cursor: pointer;
 }
