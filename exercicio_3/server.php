@@ -7,7 +7,7 @@
 	$gender = $_POST['gender'];
 	$course = $_POST['course'];
 	$suggestion = $_POST['suggestion'];
-	$checkbox = '';
+	$a = '';
 
 	$flag = false;
 	 if (isset($_POST['checkbox'])){

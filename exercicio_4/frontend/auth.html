@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../frontend/auth.css">
+        <title>Login no sistema</title>
+    </head>
+    
+    <body>
+        <form action="server.php" method="POST">
+
+            <h2>Autenticação do sistema</h2>
+
+            <h3>Usuário:</h3>
+            <input name="login" type="text" required />
+
+            <h3>Senha:</h3>
+            <input  type="password" name="password" required/><br><br>
+            
+            <button id="btn-submit" type="submit">Login</button>
+
+        </form>
+    </body>
+
+</html>
+
+<!-- 
+- Uma página para validar o acesso de um usuário ao sistema. Os dados de validação devem ser lidos de um arquivo texto,
+ em que o usuário é admin e a senha é: 12345. Caso o usuário informado em um formulário HTML seja válido, 
+ deverá ser exibida a mensagem “Bem-vindo ao sistema” e ser redirecionado para um menu, com links para o cadastro e busca de arquivos. 
+ Caso seja inválido a mensagem deve ser: “Usuário não autorizado” .
+
+-->
