@@ -1,7 +1,0 @@
-1) Pesquise que elementos do HTML devem ser utilizados para a criação de formulários e campos de entrada de informações, apresentando exemplos de cada um.
-
-2) Apesar de não precisarmos declarar variáveis no PHP, as variáveis são tipadas. Como podemos fazer, no PHP, para verificar o tipo de uma variável a partir do seu conteúdo?
-
-3) No PHP, existem variáveis pré-definidas chamadas de superglobais. Que variáveis são essas e para que servem?
-
-4) Como se declara uma função no PHP e como realizamos chamadas? Explique com exemplos, mostrando também como se passam parâmetros por valor e referência, além de como se retornam informações.
