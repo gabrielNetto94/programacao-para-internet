@@ -1,16 +1,14 @@
 <?php
 
-
 if(isset($_POST['login']) && isset($_POST['password'])){
 
     $login = $_POST['login'];
     $password = $_POST['password'];
     
-    $fp = file("auth.txt");
+    $file = file("auth.txt");
+    fclose($file);
 
-    //echo gettype($fp[0])."\t".gettype($login); 
-
-    if($password == $fp[1]){
+    if($password == trim($file[1]) && $login == trim($file[0])){
         header('Location: ../frontend/menu.html');
     }else{
         header('Location: ../frontend/auth.html');

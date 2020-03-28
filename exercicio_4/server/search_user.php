@@ -21,6 +21,7 @@
                 <h4>Idade: <?php echo $file[4]; ?> </h4>
                 <h4>Preferências de lazer: <?php echo $file[5]; ?> </h4>
 
+                <a href="../frontend/menu.html"><button >Menu Principal</button></a>
             </body>
     </html>
      
