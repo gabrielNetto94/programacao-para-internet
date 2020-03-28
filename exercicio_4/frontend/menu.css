@@ -1,0 +1,29 @@
+*{
+    max-width: 500px;
+    margin: 10px auto 0;
+    
+}
+
+h1{
+    width: 70%;
+    margin-left: 20%;
+    margin-right: 25%;
+}
+
+h3{
+    width: 40%;
+    margin-left: 0%;
+    margin-right: 30%;
+    
+}
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
