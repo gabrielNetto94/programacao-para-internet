@@ -9,12 +9,16 @@
        
         <h1>Busca de arquivos!</h1>
 
+        <form action="../server/search_user.php" method="GET">
+            <h3>Digite seu nome para pesquisa</h3>
+            <input type="text" name="name" required>
+
+            <button type="submit">Pesquisar</button>
+            
+        </form>
+        <a href="../frontend/menu.html"><button >Menu Principal</button></a>
+        
 
     </body>
 
 </html>
-<!-- 
-- Uma página para receber, através de um formulário HTML, o nome de um arquivo a ser lido e recuperar os dados cadastrados naquele arquivo,
- imprimindo o seu conteúdo na tela. As informações devem ser apresentadas devidamente formatadas, usando tags HTML tal qual foi feito o seu cadastro.
-
--->

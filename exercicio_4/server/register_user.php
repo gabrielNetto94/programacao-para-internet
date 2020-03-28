@@ -1,20 +1,46 @@
 <?php
 
-
-if(isset($_POST['login']) && isset($_POST['password'])){
-
-    $login = $_POST['login'];
+    $name = $_POST['name'];
+    $lastName = $_POST['lastName'];
     $password = $_POST['password'];
-    
-    $fp = file("auth.txt");
+    $gender = $_POST['gender'];
+    $age = $_POST['age'];
+    $recreation = '';
 
-    //echo gettype($fp[0])."\t".gettype($login); 
+    $fileName = "users/".$name.".txt";
 
-    if($password == $fp[1]){
-        header('Location: ../frontend/menu.html');
-    }else{
-        header('Location: ../frontend/auth.html');
+    $file = fopen($fileName,"w");
+
+    fwrite($file,$name."\n");
+    fwrite($file,$lastName."\n");
+    fwrite($file,$password."\n");
+    fwrite($file,$gender."\n");
+    fwrite($file,$age."\n");
+    if(isset($_POST['recreation'])){
+        $recreation = $_POST['recreation'];
+        foreach ($recreation as &$item) {
+            fwrite($file,$item.",");
+        }
     }
+    fclose($file);
 
-} 
-?>
+    ?>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../frontend/menu.css">
+        <title>Menu</title>
+
+    </head>
+
+<body>
+
+    <h1>Dados Gravados com sucesso!</h1>
+
+        <a href="../frontend/menu.html">
+            <h4>Retornar ao menu principal</h4>
+        </a>
+</body>
+
+</html>
