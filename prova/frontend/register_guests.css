@@ -5,19 +5,19 @@
 }
 
 form{
-    border: 3px solid #ddd;
-    background: #ddd;
+    order: 3px solid #ddd;
+    ackground: #ddd;
     padding: 5px;
 }
 
-h1{
-    width: 70%;
-    margin-left: 20%;
-    margin-right: 25%;
+h2{
+    width: 90%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 h3{
-    width: 30%;
+    width: 50%;
     margin-left: 0%;
     margin-right: 30%;
     
@@ -26,14 +26,8 @@ h3{
     width: 80%;
 }
 
-#input-date{
-    width: 27%;
-    margin-left: 0%;
-    margin-right: 40%;
-}
-
 button#btn-submit{
-    background-color:lightgreen;
+    background-color:rgb(162, 173, 172);
     width: 40%;
     margin-left: 30%;
     margin-right: 30%;
