@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="./register_guests.css">
+        <title>My form</title>
+    </head>
+    
+    <body>
+        <form action="../backend/register_guests.php" method="POST">
+
+            <fieldset>
+            <h1>Formulário Festinha</h1>
+
+            <h3>Digite seu nome:</h3>
+            <input id="input-name" name="name" type="text" required />
+
+            <h3>Deseja Sobremesa?</h3>
+                <input type="radio" name="dessert" value="yes" checked>
+                <label >Sim</label><br>
+                <input type="radio" name="dessert" value="no">
+                <label >Não</label><br>
+        
+            <h3>Quantidade de convidados: </h3>
+            <input type="number" name="number-guests" required/>
+
+            <button id="btn-submit" type="submit">Cadastrar</button>
+
+        </fieldset>
+        </form>
+
+        <a href="../frontend/menu.html"><button >Menu Principal</button></a>
+    </body>
+
+</html>
