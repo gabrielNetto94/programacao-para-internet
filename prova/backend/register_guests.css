@@ -1,0 +1,22 @@
+*{
+    max-width: 500px;
+    margin: 10px auto 0;
+    
+}
+
+h1{
+    font-size: 45px;
+}
+
+h3{
+    width: 50%;
+    margin-left: 0%;
+    margin-right: 30%;
+    
+}
+
+img#logo{
+	position: relative; 
+	left: 70%;
+	top: -90px;
+}

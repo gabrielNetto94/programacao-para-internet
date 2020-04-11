@@ -1,0 +1,23 @@
+*{
+    max-width: 500px;
+    margin: 10px auto 0;
+    
+}
+
+h4{
+    width: 40%;
+    margin-left: 0%;
+    margin-right: 30%;
+    
+}
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
