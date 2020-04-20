@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login no sistema</title>
+</head>
+
+<body>
+    <form action="server.php" method="POST">
+
+        <input name="name" placeholder="Digite seu nome" type="text" required /><br>
+        <input name="email" placeholder="Digite seu email" type="text" required /><br>
+        Estado civil:
+        <select id="cars" aria-placeholder="Estado civil" name="maritalStatus">
+            <option value="saab">Casado(a)</option>
+            <option value="fiat">Solteiro(a)</option>
+            <option value="audi">Separado(a)</option>
+        </select><br>
+        Cor favorita:
+        <input name="color" type="color"/><bR>
+
+        <button id="btn-submit" type="submit">Login</button>
+
+    </form>
+</body>
+
+</html>
