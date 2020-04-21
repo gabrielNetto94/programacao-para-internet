@@ -16,5 +16,7 @@ setcookie("maritalStatus$name",$maritalStatus);
 setcookie("color$name",$color);
 
 
-header('Location: ./index.html');
+//header('Refresh:2; Location: ./index.html');
+header("Refresh:2; url=index.html");
+echo "<h2>Dados cadastrados!</h2>";
 ?>
