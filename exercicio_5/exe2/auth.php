@@ -4,23 +4,24 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 
-//if (isset(file("users/".$username.".txt") != null)) {
+if (file_exists("users/".$username.".txt")) {
 
     $file = file("users/".$username.".txt");
 
-    echo $file[0];
-    echo $file[1];
-
     if ($username == trim($file[0]) && $password == trim($file[1])) {
+        
+        session_start( );
+        $_SESSION['user'] = $username;
+        
         echo "<h1>Bem vindo!</h1>";
         header("Refresh:2; url=dashboard.html");
     } else {
         echo "<H1>Usuário ou senha incorreta</H1>";
-        header("Refresh:10; url=auth.html");
+        header("Refresh:2; url=auth.html");
     }
-    fclose($file);
-//} else {
+    //fclose($file);
+} else {
     echo "<h1>Usuário não cadastrado</h1>";
-//}
+}
 
 ?>
