@@ -5,10 +5,15 @@ $email = $_POST['email'];
 $maritalStatus = $_POST['maritalStatus'];
 $color = $_POST['color'];
 
-setcookie("name",$name);
-setcookie("email",$email);
-setcookie("maritalStatus",$maritalStatus);
-setcookie("color",$color);
+echo $name."\n";
+echo $email."\n";
+echo $maritalStatus."\n";
+echo $color."\n";
+
+setcookie("name$name",$name);
+setcookie("email$name",$email);
+setcookie("maritalStatus$name",$maritalStatus);
+setcookie("color$name",$color);
 
 
 header('Location: ./index.html');
