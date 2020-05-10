@@ -1,0 +1,16 @@
+gabriel,54,-,44,10
+gabriel,54,+,44,98
+gabriel,54,+,44,98
+gabriel,54,+,44,98
+gabriel,54,+,44,98
+gabriel,1,+,1,2
+gabriel,5,/,60,0.083333333333333
+gabriel,5,/,0,INF
+gabriel,5,/,0,INF
+gabriel,5,/,0,INF
+gabriel,5,/,0,INF
+gabriel,5,/,0,Operation invalid!
+gabriel,5,/,0,Operação inválida!
+gabriel,5,/,0,Operação inválida!
+gabriel,5,/,0,Operação inválida!
+gabriel,5,/,0,Operação inválida!
