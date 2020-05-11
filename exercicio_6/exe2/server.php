@@ -34,7 +34,7 @@ if (isset($_GET['value1']) && isset($_GET['value2']) && isset($_GET['operation']
             echo "Operation invalid!";
     }
 
-    $fileName = "log_operations/".$name.".txt";
+    $fileName = "log.txt";
 
     $file = fopen($fileName,"a");
 

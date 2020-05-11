@@ -26,14 +26,10 @@
 
 
     <?php
-    $name = $_GET['name'];
 
-    if (file_exists("log_operations/" . $name . ".txt")) {
-
-        $handle = fopen("log_operations/" . $name . ".txt", "r");
+        $handle = fopen("log.txt", "r");
 
     ?>
-        <h2>Log de <?php echo $name ?> </h2>
         <table>
             <tr>
                 <th>Nome</th>
@@ -60,9 +56,7 @@
                 }
                 fclose($handle);
             }
-        } else {
-            echo "<h2>Usuário não encontrado!</h2>";
-        }
+
         ?>
 
 
