@@ -1,12 +1,12 @@
 <?php
 
 class Disciplina{
-    var $nome;
+    var $nomeDisciplina;
     var $cargaHoraria;
     var $nomeProfessor;
 
-    function getNome(){
-        return $this->nome;
+    function getNomeDisciplina(){
+        return $this->nomeDisciplina;
     }
 
     function getCargaHoraria(){
@@ -17,8 +17,8 @@ class Disciplina{
         return $this->nomeProfessor;
     }
 
-    function setNome($nome){
-        $this->nome = $nome;
+    function setNomeDisciplina($nomeDisciplina){
+        $this->nomeDisciplina = $nomeDisciplina;
     }
 
     function setCargaHoraria($cargaHoraria){
