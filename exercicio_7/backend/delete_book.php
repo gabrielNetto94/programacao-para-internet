@@ -8,6 +8,7 @@
 	
 	if ($connection->query($query) === TRUE) {
 		echo "Registro excluído com sucesso";
+		header('Location: ../frontend/index.php');
 	}
 	else {
 		echo "Erro: " . $connection->error;

@@ -24,6 +24,7 @@ $book->setParentalRating($parental_rating);
 $result = $database->createBook($tittle,$author,$release_year,$number_pages,$genre,$parental_rating);
 if($result == 1){
     echo "Dados inseridos com sucesso!";
+    header("Refresh:0; url=../frontend/index.php");
 }else{
     echo "Ocorreu um erro";
 }

@@ -37,7 +37,7 @@ class Database{
     function createBook($tittle, $author, $release_year, $number_pages, $genre, $parental_rating){
 
         include("config.php");
-        $query = "INSERT INTO `db_books`.`book` (`TITLE`, `AUTHOR`, `REALEASE_YEAR`, `NUMBER_PAGES`, `GENRE`, `PARENTAL_RATING`) 
+        $query = "INSERT INTO `db_books`.`book` (`TITLE`, `AUTHOR`, `RELEASE_YEAR`, `NUMBER_PAGES`, `GENRE`, `PARENTAL_RATING`) 
                     VALUES ('$tittle', '$author', '$release_year', '$number_pages', '$genre', '$parental_rating')";
 
         $result = mysqli_query($connection, $query);
