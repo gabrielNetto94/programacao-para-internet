@@ -1,0 +1,28 @@
+<html>
+
+<head>
+
+	<meta charset="UTF-8" />
+	<title>Cadastro Livro</title>
+</head>
+
+<body>
+
+	<h1>Cadastro de livro</h1>
+	<form action="../backend/register_book.php" method="POST" />
+
+	Título: <input type="text" name="tittle" required /><br>
+	Autor: <input type="text" name="author" required /><br>
+	Ano de lançamento: <input type="number" name="release_year" required /><br>
+	Número de páginas: <input type="number" name="number_pages" required/><br>
+	Gênero: <input type="text" name="genre"  required/><br>
+	Classificação indicativa: <input type="number" name="parental_rating" required/><br>
+
+	<input type="submit" value="Cadastrar" />
+	</form>
+
+
+</body>
+
+
+</html>
