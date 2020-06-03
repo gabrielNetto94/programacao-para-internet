@@ -83,6 +83,10 @@
     $database = new Database();
     $result = $database->indexBook();
     ?>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">
+        <h3>Cadastrar livro</h3>
+    </button>
     <table>
         <tr>
             <th>Id</th>
@@ -120,56 +124,58 @@
         }
         ?>
     </table>
-        
 
-        <!-- Trigger/Open The Modal -->
-        <button id="myBtn">
-            <h3>Cadastrar livro</h3>
-        </button>
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h1>Cadastro de livro</h1>
-                <form action="../backend/register_book.php" method="POST" />
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-                Título: <input type="text" name="tittle" required /><br>
-                Autor: <input type="text" name="author" required /><br>
-                Ano de lançamento: <input type="number" name="release_year" required /><br>
-                Número de páginas: <input type="number" name="number_pages" required /><br>
-                Gênero: <input type="text" name="genre" required /><br>
-                Classificação indicativa: <input type="number" name="parental_rating" required /><br>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Cadastro de livro</h1>
+            <form action="../backend/register_book.php" method="POST" />
 
-                <input type="submit" value="Cadastrar" />
-                </form>
-            </div>
+            Título: <input type="text" name="tittle" required /><br>
+            Autor: <input type="text" name="author" required /><br>
+            Ano de lançamento: <input type="number" name="release_year" required /><br>
+            Número de páginas: <input type="number" name="number_pages" required /><br>
+            Gênero: <input type="text" name="genre" required /><br>
+            Classificação indicativa: <input type="number" name="parental_rating" required /><br>
 
+            <input type="submit" value="Cadastrar" />
+            </form>
         </div>
 
-        <script>
-            // Get the modal
-            var modal = document.getElementById("myModal");
-            // Get the button that opens the modal
-            var btn = document.getElementById("myBtn");
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-            // When the user clicks the button, open the modal 
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
                 modal.style.display = "none";
             }
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
+        }
+        document.onkeydown = function(evt) {
+            if (evt.keyCode == 27) {
+                modal.style.display = "none";
             }
-        </script>
+
+        }
+    </script>
 </body>
 
 </html>
