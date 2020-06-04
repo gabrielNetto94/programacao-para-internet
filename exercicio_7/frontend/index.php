@@ -5,6 +5,12 @@
     <title>Livros</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <style>
+        #btn-submit:hover {
+            cursor: pointer;
+            background-color: #666;
+        }
+    </style>
 </head>
 
 <body>
@@ -66,22 +72,51 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h1>Cadastro de livro</h1>
-            <form action="../backend/register_book.php" method="POST" />
+            <form id="form" action="../backend/register_book.php" method="POST" />
 
-            Título: <input type="text" name="tittle" required /><br>
-            Autor: <input type="text" name="author" required /><br>
-            Ano de lançamento: <input type="number" name="release_year" required /><br>
-            Número de páginas: <input type="number" name="number_pages" required /><br>
-            Gênero: <input type="text" name="genre" required /><br>
-            Classificação indicativa: <input type="number" name="parental_rating" required /><br>
+            Título: <input id="title" type="text" name="tittle" required /><br>
+            Autor: <input id="author" type="text" name="author" required /><br>
+            Ano de lançamento: <input id="release_year" type="number" name="release_year" required /><br>
+            Número de páginas: <input id="number_pages" type="number" name="number_pages" required /><br>
+            Gênero: <input id="genre" type="text" name="genre" required /><br>
+            Classificação indicativa: <select name="parental_rating">
+                <option value="Livre">Livre</option>
+                <option value="10 anos">10 anos</option>
+                <option value="12 anos">12 anos</option>
+                <option value="14 anos">14 anos</option>
+                <option value="16 anos">16 anos</option>
+                <option value="18 anos">18 anos</option>
+            </select><br><br>
 
-            <input type="submit" value="Cadastrar" />
+            <input id="btn-submit" onclick="validateForm()" value="Cadastrar" />
             </form>
+
         </div>
 
     </div>
 
     <script>
+        function validateForm() {
+
+            var valueYear = document.getElementById("release_year").value;
+            var title = document.getElementById("title").value;
+            var author = document.getElementById("author").value;
+            var number_pages = document.getElementById("number_pages").value;
+            var genre = document.getElementById("genre").value;
+
+            if (title.trim() == "" || author.trim() == "" || genre.trim() == "" || number_pages <= 0) {
+                alert("Preencha todos os campos corretamente");
+
+            } else if (valueYear < 1700 || valueYear > 2020) {
+                alert("Ano inválido")
+
+            } else {
+                document.getElementById("form").submit();
+            }
+
+        }
+
+
         // Get the modal
         var modal = document.getElementById("myModal");
         // Get the button that opens the modal

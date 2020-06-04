@@ -14,7 +14,7 @@ class Database
             REALEASE_YEAR INT(4),
             NUMBER_PAGES INT(5),
             GENRE VARCHAR(30),
-            PARENTAL_RATING  INT(2)
+            PARENTAL_RATING  VARCHAR(8)
         );";
     }
 
