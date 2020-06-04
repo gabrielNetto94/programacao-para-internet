@@ -21,8 +21,8 @@ $book->setNumberPages($number_pages);
 $book->setGenre($genre);
 $book->setParentalRating($parental_rating);
 */
-$result = $database->createBook($tittle,$author,$release_year,$number_pages,$genre,$parental_rating);
-if($result == 1){
+
+if($database->createBook($tittle,$author,$release_year,$number_pages,$genre,$parental_rating)){
     echo "Dados inseridos com sucesso!";
     header("Refresh:0; url=../frontend/index.php");
 }else{

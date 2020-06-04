@@ -1,20 +1,16 @@
 <?php
-	//conexão com o banco de dados
-    include("../database/config.php");
+	
+	include("../database/database.php");
+	
+	$database = new Database();
 	
 	$id = $_GET["id"];
-	
-	$query = "DELETE FROM BOOK WHERE ID_BOOK = $id";
-	
-	if ($connection->query($query) === TRUE) {
-		echo "Registro excluído com sucesso";
+		
+	if( $database->deleteBook($id)) {
 		header('Location: ../frontend/index.php');
+	}else{
+		echo "<h2>Erro ao excluir</h2>";
+		header("Refresh:1; url=../frontend/index.php");
 	}
-	else {
-		echo "Erro: " . $connection->error;
-	}
-	
-	//fecha a conexão
-	$connection->close();
 
 ?>
