@@ -92,8 +92,7 @@ class Database
 
         $query = "UPDATE `db_books`.`book` 
             SET `TITLE`='$tittle', `AUTHOR`='$author', `RELEASE_YEAR`='$release_year', `NUMBER_PAGES`='$number_pages', `GENRE`='$genre', `PARENTAL_RATING`='$parental_rating' 
-            WHERE `ID_BOOK`='$id_book';
-    ";
+            WHERE `ID_BOOK`='$id_book';";
 
         if ($connection->query($query) === TRUE) {
             return true;
@@ -112,6 +111,20 @@ class Database
 
         $result = $connection->query($query);
 
+        $connection->close();
+
+        return $result;
+    }
+
+    function filter($string)
+    {
+
+        include("config.php");
+            
+        $query =  "select * from book where title like '%$string%' or author like '%$string%' or release_year like '%$string%';";
+        
+        $result = $connection->query($query);
+    
         $connection->close();
 
         return $result;

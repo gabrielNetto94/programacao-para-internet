@@ -21,6 +21,8 @@
     <button id="myBtn">
         <h3>Cadastrar livro</h3>
     </button>
+
+    <input id="input-search" onkeyup="filterData(this.value)" placeholder="Pesquisar livros" type="text"></input>
     <table>
         <tr>
             <th>Id</th>
@@ -34,7 +36,7 @@
             <th>Excluir</th>
 
         </tr>
-
+        
         <?php
         //error_reporting(0); //Esconde os possíveis erros do php
 
@@ -67,6 +69,8 @@
         ?>
     </table>
 
+<div id="teste"></div>
+<input type="button" value="Generate a table." onclick="generate_table()">
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -102,7 +106,7 @@
     <footer>
         <script src="script.js"></script>
     </footer>
-    
+
 </body>
 
 </html>

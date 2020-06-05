@@ -22,7 +22,7 @@
 	$database = new Database;
 	$id = $_GET["id"];
 
-	$result = $database->selectBook($id);
+	$result = $database->selectOneBook($id);
 
 	if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
