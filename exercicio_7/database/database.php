@@ -5,17 +5,44 @@ class Database
 
     function createDatabase()
     {
-        //ARRUMAR
-        include("config.php");
-        $query = "CREATE TABLE IF NOT EXISTS BOOK(
-            ID_BOOK INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            TITLE VARCHAR(60) NOT NULL,
-            AUTHOR VARCHAR(30) NOT NULL,
-            REALEASE_YEAR INT(4),
-            NUMBER_PAGES INT(5),
-            GENRE VARCHAR(30),
-            PARENTAL_RATING  VARCHAR(8)
-        );";
+
+        $server = "localhost";
+        $user = "root";
+        $password = "";
+
+        $connection = new mysqli($server, $user, $password);
+
+        if ($connection->connect_error) {
+            die("Conexão falhou: " . $connection->connect_error); // Termina se houver algum problema
+            return false;
+        }
+
+        $query =  "CREATE DATABASE IF NOT EXISTS db_books;";
+
+        $connection->query($query);
+
+        $connection->select_db("db_books");
+
+        if ($connection->query($query) === TRUE) {
+
+            $query = "USE DB_BOOKS;";
+            $connection->query($query);
+
+            $query = "CREATE TABLE IF NOT EXISTS BOOK(
+                ID_BOOK INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                TITLE VARCHAR(60) NOT NULL,
+                AUTHOR VARCHAR(30) NOT NULL,
+                RELEASE_YEAR INT(4),
+                NUMBER_PAGES INT(5),
+                GENRE VARCHAR(30),
+                PARENTAL_RATING  VARCHAR(8)
+            );";
+            $connection->query($query);
+
+            $connection->close();
+
+            return true;
+        }
     }
 
     function indexBook()
@@ -36,12 +63,11 @@ class Database
         $query = "INSERT INTO `db_books`.`book` (`TITLE`, `AUTHOR`, `RELEASE_YEAR`, `NUMBER_PAGES`, `GENRE`, `PARENTAL_RATING`) 
                     VALUES ('$tittle', '$author', '$release_year', '$number_pages', '$genre', '$parental_rating')";
 
-        //$result = mysqli_query($connection, $query);
-        //mysqli_query($connection, $query);
         if ($connection->query($query) === TRUE) {
+
             $connection->close();
+
             return true;
-            //return $result;
         }
     }
 

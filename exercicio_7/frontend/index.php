@@ -15,14 +15,6 @@
 
 <body>
     <h2>Listagem dos livros</h2>
-    <?php
-
-    //error_reporting(0); //Esconde os possíveis erros do php
-
-    include("../database/database.php");
-    $database = new Database();
-    $result = $database->indexBook();
-    ?>
     <button id="myBtn">
         <h3>Cadastrar livro</h3>
     </button>
@@ -41,26 +33,34 @@
         </tr>
 
         <?php
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-                <tr>
-                    <td><?php echo $row["ID_BOOK"] ?> </td>
-                    <td><?php echo $row["TITLE"] ?> </td>
-                    <td><?php echo $row["AUTHOR"] ?> </td>
-                    <td><?php echo $row["RELEASE_YEAR"] ?> </td>
-                    <td><?php echo $row["NUMBER_PAGES"] ?> </td>
-                    <td><?php echo $row["GENRE"] ?> </td>
-                    <td><?php echo $row["PARENTAL_RATING"] ?> </td>
-                    <td><a href="../backend/update_book.php?id=<?php print $row['ID_BOOK'] ?>">Alterar </a></td>
-                    <td><a href="../backend/delete_book.php?id=<?php print $row['ID_BOOK'] ?>" onclick="return confirm('Deseja mesmo exlcuir o livro?');">Excluir </a></td>
+        //error_reporting(0); //Esconde os possíveis erros do php
 
-                </tr>
+        include("../database/database.php");
+        $database = new Database();
+        if ($database->createDatabase()) {
+            $result = $database->indexBook();
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+                    <tr>
+                        <td><?php echo $row["ID_BOOK"] ?> </td>
+                        <td><?php echo $row["TITLE"] ?> </td>
+                        <td><?php echo $row["AUTHOR"] ?> </td>
+                        <td><?php echo $row["RELEASE_YEAR"] ?> </td>
+                        <td><?php echo $row["NUMBER_PAGES"] ?> </td>
+                        <td><?php echo $row["GENRE"] ?> </td>
+                        <td><?php echo $row["PARENTAL_RATING"] ?> </td>
+                        <td><a href="../backend/update_book.php?id=<?php print $row['ID_BOOK'] ?>">Alterar </a></td>
+                        <td><a href="../backend/delete_book.php?id=<?php print $row['ID_BOOK'] ?>" onclick="return confirm('Deseja mesmo exlcuir o livro?');">Excluir </a></td>
+
+                    </tr>
         <?php
+                }
+            } else {
+                echo "<td>0 resultados </td>";
             }
-        } else {
-            echo "<td>0 resultados </td>";
         }
+
         ?>
     </table>
 
