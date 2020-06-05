@@ -103,4 +103,17 @@ class Database
 
         $connection->close();
     }
+
+    function selectOneBook($id)
+    {
+        include("config.php");
+
+        $query = "SELECT * FROM BOOK WHERE ID_BOOK = $id";
+
+        $result = $connection->query($query);
+
+        $connection->close();
+
+        return $result;
+    }
 }

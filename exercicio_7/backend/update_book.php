@@ -3,7 +3,12 @@
 <head>
 
 	<meta charset="UTF-8" />
-
+	<style>
+        #btn-submit:hover {
+            cursor: pointer;
+            background-color: #666;
+        }
+		</style>
 </head>
 
 <body>
@@ -11,10 +16,13 @@
 	<h1>Alteração das informações do livro</h1>
 	<?php
 
-	include("../database/config.php");
+	include("../database/config.php");	
+	include("../database/database.php");
+
+	$database = new Database;
 	$id = $_GET["id"];
-	$query = "SELECT * FROM BOOK WHERE ID_BOOK = $id";
-	$result = $connection->query($query);
+
+	$result = $database->selectBook($id);
 
 	if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
@@ -34,7 +42,7 @@
 			<option value="14 anos" <?php if ($row['PARENTAL_RATING'] == "14 anos") echo "selected"; ?>>14 anos</option>
 			<option value="16 anos" <?php if ($row['PARENTAL_RATING'] == "16 anos") echo "selected"; ?>>16 anos</option>
 			<option value="18 anos" <?php if ($row['PARENTAL_RATING'] == "18 anos") echo "selected"; ?>>18 anos</option>
-		</select>
+		</select><br>	
 
 		<input id="btn-submit" onclick="validateForm()" value="Cadastrar" />
 
