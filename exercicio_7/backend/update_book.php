@@ -44,7 +44,7 @@
 			<option value="18 anos" <?php if ($row['PARENTAL_RATING'] == "18 anos") echo "selected"; ?>>18 anos</option>
 		</select><br>	
 
-		<input id="btn-submit" onclick="validateForm()" value="Cadastrar" />
+		<input id="btn-submit" onclick="validateForm()" value="Alterar" />
 
 		</form>
 	<?php

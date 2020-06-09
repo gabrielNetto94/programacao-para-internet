@@ -16,13 +16,14 @@
     </style>
 </head>
 
-<body>
+<body onload="loadTable()">
     <h2>Listagem dos livros</h2>
     <button id="myBtn">
         <h3>Cadastrar livro</h3>
     </button>
 
-    <input id="input-search" onkeyup="filterData(this.value)" placeholder="Pesquisar livros" type="text"></input>
+    <input id="input-search" onkeyup="filterData(this.value)" placeholder="Pesquisar livros " type="text"></input>
+   
     <table>
         <tr>
             <th>Id</th>
@@ -69,8 +70,8 @@
         ?>
     </table>
 
-<div id="teste"></div>
-<input type="button" value="Generate a table." onclick="generate_table()">
+<div id="tableData"></div>
+
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
