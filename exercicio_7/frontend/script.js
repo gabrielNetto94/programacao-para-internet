@@ -47,8 +47,8 @@ document.onkeydown = function (evt) {
 
 function filterData(str) {
 
-    if (str.length == 0) {
-
+    if (str.trim == " ") {
+        loadTable();
         return;
     } else {
         var xmlhttp = new XMLHttpRequest();

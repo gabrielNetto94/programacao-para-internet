@@ -22,60 +22,17 @@
         <h3>Cadastrar livro</h3>
     </button>
 
-    <input id="input-search" onkeyup="filterData(this.value)" placeholder="Pesquisar livros " type="text"></input>
-   
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Título do livro</th>
-            <th>Autor</th>
-            <th>Ano de lançamento</th>
-            <th>Número de páginas</th>
-            <th>Gênero</th>
-            <th>Classificação indicativa</th>
-            <th>Alterar</th>
-            <th>Excluir</th>
+    <div style=" float: right; font-size:20px;">
+        Pesquisar
+        <br>
+        <input id="input-search" style="font-size:17px;" onkeyup="filterData(this.value)" placeholder="Título, autor, ano lançamento" type="text"></input>
+    </div>
 
-        </tr>
-        
-        <?php
-        //error_reporting(0); //Esconde os possíveis erros do php
-
-        include("../database/database.php");
-        $database = new Database();
-        if ($database->createDatabase()) {
-            $result = $database->indexBook();
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-                    <tr>
-                        <td><?php echo $row["ID_BOOK"] ?> </td>
-                        <td><?php echo $row["TITLE"] ?> </td>
-                        <td><?php echo $row["AUTHOR"] ?> </td>
-                        <td><?php echo $row["RELEASE_YEAR"] ?> </td>
-                        <td><?php echo $row["NUMBER_PAGES"] ?> </td>
-                        <td><?php echo $row["GENRE"] ?> </td>
-                        <td><?php echo $row["PARENTAL_RATING"] ?> </td>
-                        <td><a href="../backend/update_book.php?id=<?php print $row['ID_BOOK'] ?>">Alterar </a></td>
-                        <td><a href="../backend/delete_book.php?id=<?php print $row['ID_BOOK'] ?>" onclick="return confirm('Deseja mesmo exlcuir o livro?');">Excluir </a></td>
-
-                    </tr>
-        <?php
-                }
-            } else {
-                echo "<td>0 resultados </td>";
-            }
-        }
-
-        ?>
-    </table>
-
-<div id="tableData"></div>
+    <div id="tableData"></div>
 
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
-
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -98,9 +55,7 @@
 
             <input id="btn-submit" onclick="validateForm()" value="Cadastrar" />
             </form>
-
         </div>
-
     </div>
 
 

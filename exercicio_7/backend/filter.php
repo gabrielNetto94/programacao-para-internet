@@ -21,7 +21,6 @@ echo "<table>
 </tr>";
 
 while($row = mysqli_fetch_array($result)){
-        echo $row['TITLE']."/".$row['AUTHOR']."/".$row['RELEASE_YEAR']."@";
         echo "<tr>";
         echo "<td>" .$row["ID_BOOK"]. "</td>";
         echo "<td>" .$row["TITLE"]. "</td>";
