@@ -1,16 +1,20 @@
+
+
+//document.getElementById("btn-submit").addEventListener("mouseover", mouseOver);
+
 function validateForm() {
 
-    var valueYear = document.getElementById("release_year").value;
+
     var title = document.getElementById("title").value;
     var author = document.getElementById("author").value;
+    var valueYear = document.getElementById("release_year").value;
     var number_pages = document.getElementById("number_pages").value;
     var genre = document.getElementById("genre").value;
 
     if (title.trim() == "" || author.trim() == "" || genre.trim() == "" || number_pages <= 0) {
         alert("Preencha todos os campos corretamente");
-
     } else if (valueYear < 1700 || valueYear > 2020) {
-        alert("Ano inválido")
+        alert("Ano inválido");
 
     } else {
         document.getElementById("form").submit();
@@ -48,6 +52,7 @@ document.onkeydown = function (evt) {
 function filterData(str) {
 
     if (str.trim == " ") {
+        console.log("@");
         loadTable();
         return;
     } else {
@@ -67,6 +72,7 @@ function filterData(str) {
 }
 
 function loadTable() {
+
     var xmlhttp = new XMLHttpRequest();
 
     xmlhttp.onreadystatechange = function () {
@@ -74,7 +80,6 @@ function loadTable() {
 
             var response = this.responseText;
             document.getElementById("tableData").innerHTML = response;
-
         }
     };
     xmlhttp.open("GET", "../backend/filter.php?string=" + " ", true);

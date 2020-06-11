@@ -6,14 +6,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
 
-    <style>
-        #btn-submit:hover {
-            cursor: pointer;
-            background-color: #666;
-        }
-    </style>
 </head>
 
 <body onload="loadTable()">
@@ -36,25 +33,73 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h1>Cadastro de livro</h1>
-            <form id="form" action="../backend/register_book.php" method="POST" />
 
-            Título: <input id="title" type="text" name="tittle" required /><br>
-            Autor: <input id="author" type="text" name="author" required /><br>
-            Ano de lançamento: <input id="release_year" type="number" name="release_year" required /><br>
-            Número de páginas: <input id="number_pages" type="number" name="number_pages" required /><br>
-            Gênero: <input id="genre" type="text" name="genre" required /><br>
-            Classificação indicativa: <select name="parental_rating">
-                <option value="Livre">Livre</option>
-                <option value="10 anos">10 anos</option>
-                <option value="12 anos">12 anos</option>
-                <option value="14 anos">14 anos</option>
-                <option value="16 anos">16 anos</option>
-                <option value="18 anos">18 anos</option>
-            </select><br><br>
+            <div class="container">
+                <h2>Cadastro de livro</h2>
+                <form class="form-horizontal" id="form" action="../backend/register_book.php" method="POST">
 
-            <input id="btn-submit" onclick="validateForm()" value="Cadastrar" />
-            </form>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Título:</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" id="title" placeholder="Título do livro" name="title">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Autor:</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" id="author" placeholder="Autor do livro" name="author">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Ano de lançamento:</label>
+                        <div class="col-xs-3">
+                            <input type="number" class="form-control" id="release_year" placeholder="Ano de lançamento" name="release_year">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Número de páginas:</label>
+                        <div class="col-xs-3">
+                            <input type="number" class="form-control" id="number_pages" placeholder="Número de páginas" name="number_pages">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Gênero:</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" id="genre" placeholder="Gênero do livro" name="genre">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Classificação indicativa:</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="exampleFormControlSelect1" name="parental_rating">
+                                <option value="Livre">Livre</option>
+                                <option value="10 anos">10 anos</option>
+                                <option value="12 anos">12 anos</option>
+                                <option value="14 anos">14 anos</option>
+                                <option value="16 anos">16 anos</option>
+                                <option value="18 anos">18 anos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <a id="btn-submit" onclick="validateForm()" class="btn btn-default" value="Cadastrar">Cadastrar</a>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div><!-- end containar-->
+
         </div>
     </div>
 

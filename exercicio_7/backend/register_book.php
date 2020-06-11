@@ -1,5 +1,5 @@
 <?php 
-$tittle = $_POST['tittle'];
+$title = $_POST['title'];
 $author = $_POST['author'];
 $release_year = $_POST['release_year'];
 $number_pages = $_POST['number_pages'];
@@ -22,7 +22,7 @@ $book->setGenre($genre);
 $book->setParentalRating($parental_rating);
 */
 
-if($database->createBook($tittle,$author,$release_year,$number_pages,$genre,$parental_rating)){
+if($database->createBook($title,$author,$release_year,$number_pages,$genre,$parental_rating)){
     echo "Dados inseridos com sucesso!";
     header("Refresh:0; url=../frontend/index.php");
 }else{
